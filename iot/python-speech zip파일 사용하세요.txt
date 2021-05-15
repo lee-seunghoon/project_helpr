@@ -1,0 +1,2 @@
+python-speech 폴더는 기존 git에서 끌어온거라 github 인터넷 페이지에서 못들어가네요.
+python-speech.zip 압축해제해서 사용하세요
