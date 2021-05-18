@@ -9,4 +9,4 @@
 5. ~~나머지 cmd에선 export GOOGLE_APPLICATION_CREDENTIALS="/home/pi/Downloads/my-stt-test-313404-86d2222c782c.json"~~ 
 6. ~~export한 cmd에서 python3 transcribe_streaming_mic33.py 실행 (음성 인식 스레드 부분)~~
 
-* 자동화 완료
+* 자동화 완료. 부팅하면 자동 실행됩니다.
