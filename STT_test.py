@@ -63,7 +63,7 @@ class Led_Mqtt():
     def tokenize(self, text):
         okt = Okt()
         mecab = Mecab('C:\mecab\mecab-ko-dic')
-        tokens = mecab.pos(text)
+        tokens = okt.mecab(text)
         total_words = []
         for word, tag in tokens:
             if tag not in ['JKS', 'EC', 'JKB', 'JX', 'EP', 'NNB', 'VCP', 'ETM']:
