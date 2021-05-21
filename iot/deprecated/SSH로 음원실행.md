@@ -1,4 +1,4 @@
-# SSH 실행
+# ~~SSH 실행~~ (같은 대역폭에서만 사용가능)
 
 1.  ai_answer_play는 ai_answer 폴더에 음성파일이 생성되는걸 감지
 
