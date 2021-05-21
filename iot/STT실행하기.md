@@ -9,4 +9,10 @@
 5. ~~나머지 cmd에선 export GOOGLE_APPLICATION_CREDENTIALS="/home/pi/Downloads/my-stt-test-313404-86d2222c782c.json"~~ 
 6. ~~export한 cmd에서 python3 transcribe_streaming_mic33.py 실행 (음성 인식 스레드 부분)~~
 
-* 자동화 완료. 부팅하면 자동 실행됩니다.
+* 자동화 완료. 부팅하면 자동 실행됩니다. ( sudo nano /home/pi/.bashrc 와 sudo nano /etc/xdg/lxsession/LXDE-pi/autostart 이용)
+
+
+
+
+
+* STT_Test.py는 pc의 pycharm에서 MQTT 수신 - 출력 테스트를 해보기 위한 파일
