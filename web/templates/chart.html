@@ -35,6 +35,18 @@
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="/static/css/style.css">
     <link rel="stylesheet" type="text/css" href="/static/css/jquery.mCustomScrollbar.css">
+    <script>
+        window.setTimeout(function() {
+        $(".alert-auto-dismissible").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove();
+        });
+        }, 4000);
+    </script>
+      {% if messages %}
+          {% for message in messages %}
+              <div {% if message.tags %} class="alert alert-{{ message.tags }} alert-auto-dismissible"{% endif %}>{{ message }}</div>
+          {% endfor %}
+      {% endif %}
 </head>
 
 <body>
@@ -112,9 +124,6 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="chart.html">
-                            <img class="img-fluid" src="/static/images/logo.png" alt="Theme-Logo" />
-                        </a>
 
                     </div>
                     <div class="navbar-container container-fluid">
@@ -139,9 +148,9 @@
                         <div class="pcoded-inner-navbar main-menu">
                             <div class="">
                                 <div class="main-menu-header">
-                                    <img class="img-80 img-radius" src="/static/images/avatar-4.jpg" alt="User-Profile-Image">
+                                    <img class="img-80 img-radius" src="/static/images/r2.jpg" alt="User-Profile-Image">
                                     <div class="user-details">
-                                        <span id="more-details">John Doe</span>
+                                        <span id="more-details">접속중</span>
                                     </div>
                                 </div>
                             </div>
@@ -163,7 +172,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/map/" class="waves-effect waves-dark">
+                                    <a href="/msg/" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                                         <span class="pcoded-mtext">Msgs</span>
                                         <span class="pcoded-mcaret"></span>
@@ -185,7 +194,7 @@
                                 <div class="row align-items-center">
                                     <div class="col-md-8">
                                         <div class="page-header-title">
-                                            <h5 class="m-b-10">자주 사용하는 말</h5>
+                                            <h5 class="m-b-10">자주 사용하는 말 (문구 수정 필요)</h5>
                                             <p class="m-b-0">자주 사용하는 단어와 문장의 통계 시각화</p>
                                         </div>
                                     </div>
