@@ -9472,7 +9472,7 @@ select.form-control:hover {
 
 .badge {
 	border-radius: 10px;
-	padding: 3px 7px;
+	padding: 14px 20px;
 }
 
 .badge-top-left {
@@ -14312,8 +14312,8 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before {
 }
 
 .fixed-button.active {
-	bottom: 50px;
-	opacity: 1
+	/** bottom: 50px;
+	opacity: 1 **/
 }
 
 @-webkit-keyframes pulse {

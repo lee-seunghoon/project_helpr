@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Material Able bootstrap admin template by Codedthemes</title>
+    <title>AI 애착인형</title>
     <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 10]>
@@ -109,9 +109,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="index.html">
-                            <img class="img-fluid" src="/static/images/logo.png" alt="Theme-Logo" />
-                        </a>
+
                         <a class="mobile-options waves-effect waves-light">
                             <i class="ti-more"></i>
                         </a>
@@ -139,9 +137,9 @@
                         <div class="pcoded-inner-navbar main-menu">
                             <div class="">
                                 <div class="main-menu-header">
-                                    <img class="img-80 img-radius" src="/static/images/avatar-4.jpg" alt="User-Profile-Image">
+                                    <img class="img-80 img-radius" src="/static/images/r2.jpg" alt="User-Profile-Image">
                                     <div class="user-details">
-                                        <span id="more-details">John Doe</span>
+                                        <span id="more-details">접속중</span>
                                     </div>
                                 </div>
                             </div>
@@ -201,74 +199,95 @@
                                     <div class="page-body">
                                         <div class="row">
                                             <div class="col-lg-12 col-xl-6">
-                                                <!-- Basic map start -->
+                                                <!-- map start -->
                                                 <div class="card">
                                                     <div class="card-header">
                                                         <h5>AI 애착인형의 위치</h5>
                                                         <span>아래 마커는 AI 애착인형의 위치 정보 입니다.</span>
                                                     </div>
                                                     <div class="card-block">
-                                                        <div id="basic-map" class="set-map"></div>
+
+                                                        <div id="map" style="width:100%;height:350px;"></div>
+
+                                                        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9e2e00db03843489f9e8a496b5eebb91"></script>
+                                                        <script>
+                                                        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+                                                            mapOption = {
+                                                                center: new kakao.maps.LatLng({{lan}}, {{lon}}), // 지도의 중심좌표
+                                                                level: 3 // 지도의 확대 레벨
+                                                            };
+
+                                                        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+                                                        // 마커가 표시될 위치입니다
+                                                        var markerPosition  = new kakao.maps.LatLng({{lan}}, {{lon}});
+
+                                                        // 마커를 생성합니다
+                                                        var marker = new kakao.maps.Marker({
+                                                            position: markerPosition
+                                                        });
+
+                                                        // 마커가 지도 위에 표시되도록 설정합니다
+                                                        marker.setMap(map);
+
+                                                        var iwContent = '<div style="padding:5px;"> AI인형의 위치 입니다 </div>',
+                                                            iwPosition = new kakao.maps.LatLng({{lan}}, {{lon}}); //인포윈도우 표시 위치입니다
+
+                                                        // 인포윈도우를 생성합니다
+                                                        var infowindow = new kakao.maps.InfoWindow({
+                                                            position : iwPosition,
+                                                            content : iwContent
+                                                        });
+
+                                                        infowindow.open(map, marker);
+
+
+                                                        </script>
                                                     </div>
                                                 </div>
-                                                <!-- Basic map end -->
+                                                <!-- map end -->
                                             </div>
                                             <div class="col-lg-12 col-xl-6">
-                                                <!-- Markers map start -->
+                                                <!-- forecast start -->
                                                 <div class="card">
                                                     <div class="card-header">
                                                         <h5>기상과 미세먼지 정보</h5>
                                                         <span>AI 애착인형의 위치에 기상고 미세먼지 정보 입니다.</span>
                                                     </div>
+
                                                     <div class="card-block">
-                                                        <ul class="pcoded-item pcoded-left-item">
-                                                            <li class="">
-                                                                <span class="pcoded-micon"><i class="ti-home"></i></span>
-                                                                <span class="pcoded-mtext">주소</span>
-                                                                <span class="pcoded-mcaret"></span>
-                                                            </li>
-                                                        </ul>
-                                                        <br>
-                                                        <ul class="pcoded-item pcoded-left-item">
-                                                            <li class="">
-                                                                <span class="pcoded-micon"><i class="ti-home"></i></span>
-                                                                <span class="pcoded-mtext">현재온도</span>
-                                                                <span class="pcoded-mcaret"></span>
-                                                            </li>
-                                                        </ul>
-                                                        <br>
-                                                        <ul class="pcoded-item pcoded-left-item">
-                                                            <li class="">
-                                                                <span class="pcoded-micon"><i class="ti-home"></i></span>
-                                                                <span class="pcoded-mtext">최저온도</span>
-                                                                <span class="pcoded-mcaret"></span>
-                                                            </li>
-                                                        </ul>
-                                                        <br>
-                                                        <ul class="pcoded-item pcoded-left-item">
-                                                            <li class="">
-                                                                <span class="pcoded-micon"><i class="ti-home"></i></span>
-                                                                <span class="pcoded-mtext">최고온도</span>
-                                                                <span class="pcoded-mcaret"></span>
-                                                            </li>
-                                                        </ul>
-                                                        <br>
-                                                        <ul class="pcoded-item pcoded-left-item">
-                                                            <li class="">
-                                                                <span class="pcoded-micon"><i class="ti-home"></i></span>
-                                                                <span class="pcoded-mtext">날씨상태</span>
-                                                                <span class="pcoded-mcaret"></span>
-                                                            </li>
-                                                        </ul>
-                                                        <br>
-                                                        <ul class="pcoded-item pcoded-left-item">
-                                                            <li class="">
-                                                                <span class="pcoded-micon"><i class="ti-home"></i></span>
-                                                                <span class="pcoded-mtext">미세먼지</span>
-                                                                <span class="pcoded-mcaret"></span>
-                                                            </li>
-                                                        </ul>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="text-custom">오늘은 <code>{{current_date}}</code>이며, 현재시간은 <code>{{current_time}}</code>입니다.</div>
+
+                                                            </div>
+                                                            <div class="col-lg-4 col-xl-3 col-sm-6">
+                                                                <div class="badge-box">
+                                                                    <div class="sub-title">현재온도</div>
+                                                                    <label class="badge badge-primary">{{cTemp}}</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-xl-3 col-sm-6">
+                                                                <div class="badge-box">
+                                                                    <div class="sub-title">최저온도</div>
+                                                                    <label class="badge badge-primary">{{MinTemp}}</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-xl-3 col-sm-6">
+                                                                <div class="badge-box">
+                                                                    <div class="sub-title">최고온도</div>
+                                                                    <label class="badge badge-primary">{{MaxTemp}}</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-xl-3 col-sm-6">
+                                                                <div class="badge-box">
+                                                                    <div class="sub-title">날씨</div>
+                                                                    <label class="badge badge-primary">{{cWeather}}</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
+
                                                 </div>
                                                 <!-- Markers map end -->
                                         </div>
