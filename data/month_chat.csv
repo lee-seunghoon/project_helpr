@@ -1,4 +1,4 @@
-index,question,date,time,hour,weekday
+id,question,conversation_date,conversation_time,qhour,day_of_the_week
 0,내일은 한가할까?,2021-05-05,2021-05-05 08:00,08,수
 1,어디야?,2021-05-05,2021-05-05 08:30,08,수
 2,배부르네.,2021-05-05,2021-05-05 09:00,09,수
