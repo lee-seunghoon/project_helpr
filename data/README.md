@@ -9,3 +9,5 @@
 - Senior_sentiment_dictionary.csv : 노인 맞춤 감정사전 
 
   -> knu_sentiment_lexicon 와 챗봇 데이터를 활용하여 노인 맞춤 감정사전을 작성하였습니다.
+  
+- month_chat : 한달치의 대화 내용
