@@ -8,7 +8,6 @@
     <!--[if lt IE 10]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-
     <![endif]-->
     <!-- Meta -->
     <meta charset="utf-8">
@@ -36,9 +35,6 @@
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="/static/css/style.css">
     <link rel="stylesheet" type="text/css" href="/static/css/jquery.mCustomScrollbar.css">
-    {% for jsfile_name in script_list %}
-        <script src="{{ host }}/{{ jsfile_name }}.js"></script>
-    {% endfor %}
 </head>
 
 <body>
@@ -136,6 +132,7 @@
                 </div>
             </nav>
 
+
             <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
                     <nav class="pcoded-navbar">
@@ -181,7 +178,9 @@
                                     </a>
                                 </li>
                             </ul>
+                        </div>
                     </nav>
+
                     <div class="pcoded-content">
                         <!-- Page-header start -->
                         <div class="page-header">
@@ -207,14 +206,469 @@
                                             <div class="col-md-12 col-lg-6">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h5>그래프/차트1</h5>
-                                                        <span>그래프/차트1 입니다.</span>
+                                                        <h5>가장 많이 쓰는 표현</h5>
+                                                        <span>일상적으로 많이 사용하는 동사 표현입니다.</span>
 
                                                     </div>
                                                     <div class="card-block">
-<!--                                                        <div id="morris-site-visit"></div>-->
                                                         <div style="text-align : center;">
-                                                            <img src = "/static/images/test.png" width="530" hight="500">
+                                                            <script>
+                                                            window.onload = function () {
+                                                            var chart1 = new CanvasJS.Chart("chartContainer1", {
+                                                                animationEnabled: true,
+                                                                theme: "light2", // "light1", "light2", "dark1", "dark2"
+                                                                axisY: {
+                                                                    title: "횟수"
+                                                                },
+                                                                data: [{
+                                                                    type: "column",
+                                                                    dataPoints: [
+                                                                        { y: 86, label: "자다" },
+                                                                        { y: 76,  label: "좋다" },
+                                                                        { y: 68,  label: "먹다" },
+                                                                        { y: 62,  label: "가다" },
+                                                                        { y: 50,  label: "들다" },
+                                                                        { y: 47, label: "오다" },
+                                                                        { y: 35,  label: "받다" },
+                                                                        { y: 34,  label: "많다" },
+                                                                        { y: 33,  label: "다니다" },
+                                                                        { y: 32,  label: "모르다" }
+                                                                    ]
+                                                                }]
+                                                            });
+                                                             var chart2 = new CanvasJS.Chart("chartContainer2", {
+                                                                animationEnabled: true,
+                                                                theme: "light2", // "light1", "light2", "dark1", "dark2"
+                                                                axisY: {
+                                                                    title: "횟수",
+                                                                    includeZero: true
+                                                                },
+                                                                data: [{
+                                                                    type: "column",
+                                                                    dataPoints: [
+                                                                        { y: 50, label: "남편" },
+                                                                        { y: 39,  label: "집" },
+                                                                        { y: 28,  label: "친구" },
+                                                                        { y: 26,  label: "병원" },
+                                                                        { y: 26,  label: "퇴근" },
+                                                                        { y: 25, label: "엄마" },
+                                                                        { y: 25,  label: "술" },
+                                                                        { y: 25,  label: "기분" },
+                                                                        { y: 23,  label: "잠" },
+                                                                        { y: 22,  label: "하루" }
+                                                                    ]
+                                                                }]
+                                                            });
+                                                            var chart3 = new CanvasJS.Chart("chartContainer3", {
+                                                            animationEnabled: true,
+
+                                                            axisX:{
+                                                                interval: 1
+                                                            },
+                                                            axisY2:{
+                                                                interlacedColor: "rgba(1,77,101,.2)",
+                                                                gridColor: "rgba(1,77,101,.1)",
+
+                                                            },
+                                                            data: [{
+                                                                type: "bar",
+                                                                name: "companies",
+                                                                axisYType: "secondary",
+                                                                color: "#014D65",
+                                                                dataPoints: [
+                                                                    { y: 6, label: "고맙다" },
+                                                                    { y: 7, label: "놀다" },
+                                                                    { y: 7, label: "낫다" },
+                                                                    { y: 8, label: "좋아하다" },
+                                                                    { y: 8, label: "크다" },
+                                                                    { y: 11, label: "배부르다" },
+                                                                    { y: 20, label: "괜찮다" },
+                                                                    { y: 34, label: "많다" },
+                                                                    { y: 35, label: "받다" },
+                                                                    { y: 76, label: "좋다" },
+                                                                ]
+                                                            }]
+                                                        });
+                                                        var chart4 = new CanvasJS.Chart("chartContainer4", {
+                                                            animationEnabled: true,
+
+                                                            axisX:{
+                                                                interval: 1
+                                                            },
+                                                            axisY2:{
+                                                                interlacedColor: "rgba(1,77,101,.2)",
+                                                                gridColor: "rgba(1,77,101,.1)",
+
+                                                            },
+                                                            data: [{
+                                                                type: "bar",
+                                                                name: "companies",
+                                                                axisYType: "secondary",
+                                                                color: "#990000",
+                                                                dataPoints: [
+                                                                    { y: 11, label: "우울하다" },
+                                                                    { y: 12, label: "무섭다" },
+                                                                    { y: 13, label: "지다" },
+                                                                    { y: 15, label: "죽다" },
+                                                                    { y: 17, label: "피곤하다" },
+                                                                    { y: 18, label: "떨어지다" },
+                                                                    { y: 18, label: "싫다" },
+                                                                    { y: 19, label: "힘들다" },
+                                                                    { y: 21, label: "아프다" },
+                                                                    { y: 26, label: "불안하다" },
+                                                                ]
+                                                            }]
+                                                        });
+
+
+                                                            var chart6 = new CanvasJS.Chart("chartContainer6", {
+
+                                                            axisY:[{
+                                                                title: "긍정",
+                                                                lineColor: "#4071c7",
+                                                                tickColor: "#4071c7",
+                                                                labelFontColor: "#4071c7",
+                                                                titleFontColor: "#4071c7",
+                                                                includeZero: true,
+                                                            },
+                                                            {
+                                                                title: "부정",
+                                                                lineColor: "#C24642",
+                                                                tickColor: "#C24642",
+                                                                labelFontColor: "#C24642",
+                                                                titleFontColor: "#C24642",
+                                                                includeZero: true,
+                                                            }],
+                                                            axisY2: {
+                                                                title: "긍부정 비율(%)",
+                                                                lineColor: "#7F6084",
+                                                                tickColor: "#7F6084",
+                                                                labelFontColor: "#7F6084",
+                                                                titleFontColor: "#7F6084",
+                                                                includeZero: true,
+                                                                suffix: "%"
+                                                            },
+                                                            toolTip: {
+                                                                shared: true
+                                                            },
+                                                            legend: {
+                                                                cursor: "pointer",
+                                                                itemclick: toggleDataSeries
+                                                            },
+                                                            data: [{
+                                                                type: "line",
+                                                                name: "긍정",
+                                                                color: "#4071c7",
+                                                                showInLegend: true,
+                                                                axisYIndex: 1,
+                                                                dataPoints: [
+                                                                    { label: "8시", y: 20 },
+                                                                    { label: "9시", y: 17 },
+                                                                    { label: "10시", y: 8 },
+                                                                    { label: "11시", y: 12 },
+                                                                    { label: "12시", y: 12 },
+                                                                    { label: "13시", y: 19 },
+                                                                    { label: "14시", y: 18 },
+                                                                    { label: "15시", y: 10 },
+                                                                    { label: "16시", y: 16 },
+                                                                    { label: "17시", y: 19 },
+                                                                    { label: "18시", y: 18 },
+                                                                    { label: "19시", y: 14 },
+                                                                    { label: "20시", y: 9 },
+                                                                    { label: "21시", y: 7 },
+                                                                    { label: "22시", y: 6 },
+
+                                                                ]
+                                                            },
+                                                            {
+                                                                type: "line",
+                                                                name: "부정",
+                                                                color: "#C24642",
+                                                                axisYIndex: 0,
+                                                                showInLegend: true,
+                                                                dataPoints: [
+                                                                    { label: "8시", y: 9 },
+                                                                    { label: "9시", y: 11 },
+                                                                    { label: "10시", y: 19 },
+                                                                    { label: "11시", y: 24 },
+                                                                    { label: "12시", y: 34 },
+                                                                    { label: "13시", y: 23 },
+                                                                    { label: "14시", y: 25 },
+                                                                    { label: "15시", y: 32 },
+                                                                    { label: "16시", y: 20 },
+                                                                    { label: "17시", y: 21 },
+                                                                    { label: "18시", y: 31 },
+                                                                    { label: "19시", y: 26 },
+                                                                    { label: "20시", y: 33 },
+                                                                    { label: "21시", y: 35 },
+                                                                    { label: "22시", y: 38 }
+                                                                ]
+                                                            },
+                                                            {
+                                                                type: "line",
+                                                                name: "긍부정 비율(%)",
+                                                                color: "#7F6084",
+                                                                axisYType: "secondary",
+                                                                showInLegend: true,
+                                                                dataPoints: [
+                                                                    { label: "8시", y: 69 },
+                                                                    { label: "9시", y: 60.7 },
+                                                                    { label: "10시", y: 29.6 },
+                                                                    { label: "11시", y: 33.3 },
+                                                                    { label: "12시", y: 26.1 },
+                                                                    { label: "13시", y: 54.8 },
+                                                                    { label: "14시", y: 58.1 },
+                                                                    { label: "15시", y: 23.8 },
+                                                                    { label: "16시", y: 44.4 },
+                                                                    { label: "17시", y: 47.5 },
+                                                                    { label: "18시", y: 36.7 },
+                                                                    { label: "19시", y: 35 },
+                                                                    { label: "20시", y: 21.4 },
+                                                                    { label: "21시", y: 16.7 },
+                                                                    { label: "22시", y: 13.6 }
+                                                                ]
+                                                            }]
+                                                        });
+                                                        chart6.render();
+
+                                                        function toggleDataSeries(e) {
+                                                            if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                                                                e.dataSeries.visible = false;
+                                                            } else {
+                                                                e.dataSeries.visible = true;
+                                                            }
+                                                            e.chart6.render();
+                                                        }
+                                                        var chart = new CanvasJS.Chart("chartContainer5", {
+                                                            axisX: {
+                                                                interval: 1,
+                                                                intervalType: "day",
+                                                                valueFormatString: "DDD"
+                                                            },
+                                                            axisY:[{
+                                                                title: "긍정",
+                                                                lineColor: "#4071c7",
+                                                                tickColor: "#4071c7",
+                                                                labelFontColor: "#4071c7",
+                                                                titleFontColor: "#4071c7",
+                                                                includeZero: true,
+                                                            },
+                                                            {
+                                                                title: "부정",
+                                                                lineColor: "#C24642",
+                                                                tickColor: "#C24642",
+                                                                labelFontColor: "#C24642",
+                                                                titleFontColor: "#C24642",
+                                                                includeZero: true,
+                                                            }],
+                                                            axisY2: {
+                                                                title: "긍부정 비율(%)",
+                                                                lineColor: "#7F6084",
+                                                                tickColor: "#7F6084",
+                                                                labelFontColor: "#7F6084",
+                                                                titleFontColor: "#7F6084",
+                                                                includeZero: true,
+                                                                suffix: "%"
+                                                            },
+                                                            toolTip: {
+                                                                shared: true
+                                                            },
+                                                            legend: {
+                                                                cursor: "pointer",
+                                                                itemclick: toggleDataSeries
+                                                            },
+                                                            data: [{
+                                                                type: "line",
+                                                                name: "긍정",
+                                                                color: "#4071c7",
+                                                                xValueFormatString: "DDD",
+                                                                showInLegend: true,
+                                                                axisYIndex: 1,
+                                                                dataPoints: [
+                                                                    { x: new Date(2021, 05, 21), y: 30 },
+                                                                    { x: new Date(2021, 05, 22), y: 24 },
+                                                                    { x: new Date(2021, 05, 23), y: 30 },
+                                                                    { x: new Date(2021, 05, 24), y: 44 },
+                                                                    { x: new Date(2021, 05, 25), y: 26 },
+                                                                    { x: new Date(2021, 05, 26), y: 31 },
+                                                                    { x: new Date(2021, 05, 27), y: 20 }
+                                                                ]
+                                                            },
+                                                            {
+                                                                type: "line",
+                                                                name: "부정",
+                                                                color: "#C24642",
+                                                                axisYIndex: 0,
+                                                                xValueFormatString: "DDD",
+                                                                showInLegend: true,
+                                                                dataPoints: [
+                                                                    { x: new Date(2021, 05, 21), y: 49 },
+                                                                    { x: new Date(2021, 05, 22), y: 58 },
+                                                                    { x: new Date(2021, 05, 23), y: 56 },
+                                                                    { x: new Date(2021, 05, 24), y: 57 },
+                                                                    { x: new Date(2021, 05, 25), y: 71 },
+                                                                    { x: new Date(2021, 05, 26), y: 40 },
+                                                                    { x: new Date(2021, 05, 27), y: 50 }
+                                                                ]
+                                                            },
+                                                            {
+                                                                type: "line",
+                                                                name: "긍부정 비율(%)",
+                                                                color: "#7F6084",
+                                                                axisYType: "secondary",
+                                                                showInLegend: true,
+                                                                xValueFormatString: "DDD",
+                                                                dataPoints: [
+                                                                    { x: new Date(2021, 05, 21), y: 61.2 },
+                                                                    { x: new Date(2021, 05, 22), y: 41.4 },
+                                                                    { x: new Date(2021, 05, 23), y: 53.6 },
+                                                                    { x: new Date(2021, 05, 24), y: 77.2 },
+                                                                    { x: new Date(2021, 05, 25), y: 36.6 },
+                                                                    { x: new Date(2021, 05, 26), y: 77.5 },
+                                                                    { x: new Date(2021, 05, 27), y: 40.0 }
+                                                                ]
+                                                            }]
+                                                        });
+                                                        chart.render();
+
+                                                        function toggleDataSeries(e) {
+                                                            if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                                                                e.dataSeries.visible = false;
+                                                            } else {
+                                                                e.dataSeries.visible = true;
+                                                            }
+                                                            e.chart.render();
+                                                        }
+                                                        var chart8 = new CanvasJS.Chart("chartContainer8", {
+                                                        animationEnabled: true,
+                                                        theme: "light2",
+                                                        axisX:{
+                                                            valueFormatString: "MMM DD",
+                                                            crosshair: {
+                                                                enabled: true,
+                                                                snapToDataPoint: true
+                                                            }
+                                                        },
+                                                        axisY: {
+                                                            includeZero: true,
+                                                            crosshair: {
+                                                                enabled: true
+                                                            }
+                                                        },
+                                                        toolTip:{
+                                                            shared:true
+                                                        },
+                                                        legend:{
+                                                            cursor:"pointer",
+                                                            verticalAlign: "bottom",
+                                                            horizontalAlign: "left",
+                                                            dockInsidePlotArea: true,
+                                                            itemclick: toogleDataSeries
+                                                        },
+                                                        data: [{
+                                                            type: "line",
+                                                            showInLegend: true,
+                                                            name: "긍정",
+                                                            markerType: "square",
+                                                            xValueFormatString: "YYYY MMM DD",
+                                                            color: "#4071c7",
+                                                            dataPoints: [
+                                                                { x: new Date(2021, 4, 5), y: 6 },
+                                                                { x: new Date(2021, 4, 6), y: 12 },
+                                                                { x: new Date(2021, 4, 7), y: 4 },
+                                                                { x: new Date(2021, 4, 8), y: 8 },
+                                                                { x: new Date(2021, 4, 9), y: 4 },
+                                                                { x: new Date(2021, 4, 10), y: 8 },
+                                                                { x: new Date(2021, 4, 11), y: 2 },
+                                                                { x: new Date(2021, 4, 12), y: 5 },
+                                                                { x: new Date(2021, 4, 13), y: 11 },
+                                                                { x: new Date(2021, 4, 14), y: 7 },
+                                                                { x: new Date(2021, 4, 15), y: 12 },
+                                                                { x: new Date(2021, 4, 16), y: 6 },
+                                                                { x: new Date(2021, 4, 17), y: 8 },
+                                                                { x: new Date(2021, 4, 18), y: 9 },
+                                                                { x: new Date(2021, 4, 19), y: 6 },
+                                                                { x: new Date(2021, 4, 20), y: 8 },
+                                                                { x: new Date(2021, 4, 21), y: 4 },
+                                                                { x: new Date(2021, 4, 22), y: 7 },
+                                                                { x: new Date(2021, 4, 23), y: 5 },
+                                                                { x: new Date(2021, 4, 24), y: 9 },
+                                                                { x: new Date(2021, 4, 25), y: 7 },
+                                                                { x: new Date(2021, 4, 26), y: 4 },
+                                                                { x: new Date(2021, 4, 27), y: 6 },
+                                                                { x: new Date(2021, 4, 28), y: 7 },
+                                                                { x: new Date(2021, 4, 29), y: 4 },
+                                                                { x: new Date(2021, 4, 30), y: 5 },
+                                                                { x: new Date(2021, 4, 31), y: 5 },
+                                                                { x: new Date(2021, 5, 1), y: 6 },
+                                                                { x: new Date(2021, 5, 2), y: 9 },
+                                                                { x: new Date(2021, 5, 3), y: 7 },
+                                                                { x: new Date(2021, 5, 4), y: 4 },
+
+                                                            ]
+                                                        },
+                                                        {
+                                                            type: "line",
+                                                            showInLegend: true,
+                                                            name: "부정",
+                                                            color: "#F08080",
+                                                            lineDashType: "dash",
+                                                            dataPoints: [
+                                                                { x: new Date(2021, 4, 5), y: 16 },
+                                                                { x: new Date(2021, 4, 6), y: 12 },
+                                                                { x: new Date(2021, 4, 7), y: 13 },
+                                                                { x: new Date(2021, 4, 8), y: 10 },
+                                                                { x: new Date(2021, 4, 9), y: 12 },
+                                                                { x: new Date(2021, 4, 10), y: 6 },
+                                                                { x: new Date(2021, 4, 11), y: 15 },
+                                                                { x: new Date(2021, 4, 12), y: 8 },
+                                                                { x: new Date(2021, 4, 13), y: 10 },
+                                                                { x: new Date(2021, 4, 14), y: 19 },
+                                                                { x: new Date(2021, 4, 15), y: 13 },
+                                                                { x: new Date(2021, 4, 16), y: 11 },
+                                                                { x: new Date(2021, 4, 17), y: 14 },
+                                                                { x: new Date(2021, 4, 18), y: 15 },
+                                                                { x: new Date(2021, 4, 19), y: 8 },
+                                                                { x: new Date(2021, 4, 20), y: 13 },
+                                                                { x: new Date(2021, 4, 21), y: 8 },
+                                                                { x: new Date(2021, 4, 22), y: 11 },
+                                                                { x: new Date(2021, 4, 23), y: 11 },
+                                                                { x: new Date(2021, 4, 24), y: 15 },
+                                                                { x: new Date(2021, 4, 25), y: 10 },
+                                                                { x: new Date(2021, 4, 26), y: 15 },
+                                                                { x: new Date(2021, 4, 27), y: 14 },
+                                                                { x: new Date(2021, 4, 28), y: 15 },
+                                                                { x: new Date(2021, 4, 29), y: 6 },
+                                                                { x: new Date(2021, 4, 30), y: 16 },
+                                                                { x: new Date(2021, 4, 31), y: 14 },
+                                                                { x: new Date(2021, 5, 1), y: 18},
+                                                                { x: new Date(2021, 5, 2), y: 9 },
+                                                                { x: new Date(2021, 5, 3), y: 8 },
+                                                                { x: new Date(2021, 5, 4), y: 16 }
+                                                            ]
+                                                        }]
+                                                    });
+                                                    chart8.render();
+
+                                                    function toogleDataSeries(e){
+                                                        if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                                                            e.dataSeries.visible = false;
+                                                        } else{
+                                                            e.dataSeries.visible = true;
+                                                        }
+                                                        chart8.render();
+                                                    }
+
+                                                            chart1.render();
+                                                            chart2.render();
+                                                            chart3.render();
+                                                            chart4.render();
+                                                            chart8.render();
+
+                                                            }
+                                                            </script>
+                                                            <div id="chartContainer1" style="height: 300px; width: 100%;"></div>
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -224,50 +678,49 @@
                                             <div class="col-md-12 col-lg-6">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h5>그래프/차트2</h5>
-                                                        <span>그래프/차트2 입니다.</span>
+                                                        <h5>가장 많이 쓰는 단어</h5>
+                                                        <span>동사와 함께 자주 쓰이는 단어입니다.</span>
                                                     </div>
                                                     <div class="card-block">
-<!--                                                        <div id="morris-bar-chart"></div>-->
+
                                                         <div style="text-align : center;">
-                                                            <img src = "/static/images/test1.png" width="530" hight="500">
+                                                            <div id="chartContainer2" style="height: 300px; width: 100%;"></div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <!-- Bar Chart Ends -->
                                             <!-- EXTRA AREA CHART start -->
-                                            <div class="col-lg-12">
+                                            <div class="col-md-12 col-lg-6">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h5>그래프/차트3</h5>
-                                                        <span>그래프/차트3 입니다.</span>
+                                                        <h5>긍정 표현</h5>
+                                                        <span>부모님은 행복감을 느끼실 때, 좋다는 표현을 자주 사용합니다.</span>
                                                     </div>
                                                     <div class="card-block">
-<!--                                                        <div id="morris-extra-area"></div>-->
+
                                                         <div style="text-align : center;">
-                                                            <img src = "/static/images/positive.png" width="550" hight="500">
+                                                            <div id="chartContainer3" style="height: 300px; width: 100%;"></div>
+
                                                         </div>
-                                                        <!--<<img src='C:/jsj/DJANGOexam/project_helper/firstapp/static/images/The_most_used_expressions.png' alt="">-->
-                                                        <!--<img src='C:/jsj/DJANGOexam/project_helper/firstapp/static/images/Top_10_positive_words.png' alt="">-->
+
                                                     </div>
                                                 </div>
                                             </div>
                                             <!-- EXTRA AREA CHART Ends -->
 
                                             <!-- Area Chart start -->
-                                            <div class="col-lg-12">
+                                            <div class="col-md-12 col-lg-6">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h5>그래프/차트4</h5>
-                                                        <span>그래프/차트4 입니다.</span>
+                                                        <h5>부정표현</h5>
+                                                        <span>부모님은 불안하다를 많이 사용하였습니다.</span>
                                                     </div>
                                                     <div class="card-block">
-<!--                                                        <div id="area-example"></div>-->
                                                         <div style="text-align : center;">
-                                                            <img src = "/static/images/negative.png" width="550" hight="500">
+                                                            <div id="chartContainer4" style="height: 300px; width: 100%;"></div>
                                                         </div>
-                                                        <!-- <img src='C:/jsj/DJANGOexam/project_helper/firstapp/static/images/Top_10_negative_words.png' alt="">-->
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -276,11 +729,40 @@
                                             <div class="col-md-12 col-lg-6">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h5>그래프/차트5</h5>
-                                                        <span>그래프/차트5 입니다.</span>
+                                                        <h5>시간별 긍부정 빈도</h5>
+                                                        <span>오전 8시, 오후2시에 가장 긍정적이며, 오후 10시에 가장 부정적입니다. </span>
                                                     </div>
                                                     <div class="card-block">
-<!--                                                        <div id="line-example"></div>-->
+
+                                                <div id="chartContainer6" style="height: 300px; width: 100%;"></div>
+                                                <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- LINE CHART Ends -->
+                                            <!-- Donut chart start -->
+                                            <div class="col-md-12 col-lg-6">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h5>요일별 긍부정 빈도</h5>
+                                                        <span>토요일에 가장 긍정적, 금요일에 가장 부정적입니다.</span>
+                                                    </div>
+                                                    <div class="card-block">
+                                                        <div id="chartContainer5" style="height: 300px; width: 100%;"></div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-lg-6">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h5>일자별 긍부정 빈도</h5>
+                                                        <span> </span>
+                                                    </div>
+                                                    <div class="card-block">
+
+                                                <div id="chartContainer8" style="height: 300px; width: 100%;"></div>
 
                                                     </div>
                                                 </div>
@@ -290,12 +772,13 @@
                                             <div class="col-md-12 col-lg-6">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h5>그래프/차트6</h5>
-                                                        <span>그래프/차트6 입니다.</span>p
+                                                        <h5>일자별 대화내용</h5>
+                                                        <span>부모님의 대화내용이 궁금하다면, 원하는 날짜를 클릭해주세요.</span>
+
                                                     </div>
                                                     <div class="card-block">
-<!--                                                        <div id="donut-example"></div>-->
-<!--                                                        {{user_chat}}-->
+
+
 
                                                     </div>
                                                 </div>
@@ -324,23 +807,23 @@
 <![endif]-->
     <!-- Warning Section Ends -->
     <!-- Required Jquery -->
-    <script type="text/javascript" src="/static/js/jquery/jquery.min.js "></script>
-    <script type="text/javascript" src="/static/js/jquery-ui/jquery-ui.min.js "></script>
-    <script type="text/javascript" src="/static/js/popper.js/popper.min.js"></script>
+    <script src="/static/js/jquery/jquery.min.js "></script>
+    <script src="/static/js/jquery-ui/jquery-ui.min.js "></script>
+    <script src="/static/js/popper.js/popper.min.js"></script>
     <script type="text/javascript" src="/static/js/bootstrap/js/bootstrap.min.js "></script>
     <!-- waves js -->
     <script src="/static/pages/waves/js/waves.min.js"></script>
     <!-- jquery slimscroll js -->
-    <script type="text/javascript" src="/static/js/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="/static/js/jquery-slimscroll/jquery.slimscroll.js"></script>
     <!-- Morris Chart js -->
     <script src="/static/js/raphael/raphael.min.js"></script>
     <script src="/static/js/morris.js/morris.js"></script>
     <!-- Custom js -->
-    <script src="/static/pages/chart/morris/morris-custom-chart.js"></script>
+<!--    <script src="/static/pages/chart/morris/morris-custom-chart.js"></script>-->
     <script src="/static/js/pcoded.min.js"></script>
     <script src="/static/js/vertical/vertical-layout.min.js"></script>
     <script src="/static/js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script type="text/javascript" src="/static/js/script.js"></script>
+    <script src="/static/js/script.js"></script>
 </body>
 
 </html>
